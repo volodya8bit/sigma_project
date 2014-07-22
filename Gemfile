@@ -1,7 +1,27 @@
 source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
+
 gem 'rails', '4.1.4'
+
+group :production, :development, :test do
+  gem 'pry-rails'
+  gem 'pry'
+  gem 'pry-nav'
+  gem 'pry-remote'
+  gem 'factory_girl_rails'
+  gem 'faker', '~> 1.2.0'
+  gem 'pg'
+end
+ 
+group :test do
+  gem 'rspec-rails'
+  gem 'spork'
+  gem 'database_cleaner'
+  gem 'shoulda-matchers'
+  gem 'webmock'
+  gem 'pg'
+end
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
@@ -35,21 +55,4 @@ gem 'spring',        group: :development
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
-group :production, :development, :test do
-  gem 'pry-rails'
-  gem 'pry'
-  gem 'pry-nav'
-  gem 'pry-remote'
-  gem 'factory_girl_rails'
-  gem 'faker', '~> 1.2.0'
-  gem 'pg'
-end
- 
-group :test do
-  gem 'rspec-rails'
-  gem 'spork'
-  gem 'database_cleaner'
-  gem 'shoulda-matchers'
-  gem 'webmock'
-  gem 'pg'
-end
+
