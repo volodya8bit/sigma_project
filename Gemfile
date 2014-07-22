@@ -7,13 +7,12 @@ gem 'rails', '4.1.4'
 
 
 group :development, :test do
-  gem 'sqlite3'
   gem 'pry-rails'
   gem 'pry'
   gem 'pry-nav'
   gem 'pry-remote'
   gem 'factory_girl_rails'
-  gem 'faker', '~> 1.2.0'  
+  gem 'faker' 
 end
  
 group :test do
