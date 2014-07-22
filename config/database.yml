@@ -6,6 +6,7 @@ default: &default
   pool: 5
   username: db_user
   password: 1234
+  host: localhost
 
 development:
   adapter: postgresql
