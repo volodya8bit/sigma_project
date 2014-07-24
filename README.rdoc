@@ -1,28 +1,10 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Агрегатор кулинарных рецептов на русском языке.
 
-Things you may want to cover:
+Программа минимум: Объеденить сылки на рецепты с разных ресусров предоставляя удобные инструменты сортировки и поиска.
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Программа максимум: Сервис позволяющий по пожеланиям пользователя получить несколько подходящих рецептов и список продуктов необходимый для приготовления. Примеры пожеланий: С мясом / ввегетарианский, время приготовления, низкой коллорийности ит.д.
 
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+

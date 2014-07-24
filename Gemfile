@@ -1,10 +1,30 @@
 source 'https://rubygems.org'
 
-
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
+
 gem 'rails', '4.1.4'
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+
+
+
+group :development, :test do
+  gem 'pry-rails'
+  gem 'pry'
+  gem 'pry-nav'
+  gem 'pry-remote'
+  gem 'factory_girl_rails'
+  gem 'faker' 
+end
+ 
+group :test do
+  gem 'rspec-rails'
+  gem 'spork'
+  gem 'database_cleaner'
+  gem 'shoulda-matchers'
+  gem 'webmock'  
+end
+
+gem 'pg'
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
 # Use Uglifier as compressor for JavaScript assets
