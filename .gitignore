@@ -14,8 +14,15 @@
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
+<<<<<<< HEAD
 /.idea
 .idea/dataSources.xml
 /config/database.yml
 /db/schema.rb
 .gitignore
+=======
+#ignore folder rubymine
+/.idea
+#ignore config database
+#/db/database.yml
+>>>>>>> 020953259221e853714a961b122130331cdaf641
