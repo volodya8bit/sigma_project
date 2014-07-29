@@ -2,8 +2,8 @@
 
 FactoryGirl.define do
   factory :user do
-    email {Faker::Internet.email}
-    password {Faker::Internet.password}
-    role {Faker::Number.rand_in_range(1,2)}
+    email { Faker::Internet.email }
+    password { Faker::Internet.password }
+    role { Faker::Number.rand_in_range(1, 2) }
   end
 end

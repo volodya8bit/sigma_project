@@ -2,10 +2,8 @@
 
 FactoryGirl.define do
   factory :category do
-
-    title {Faker::Lorem.word}
-    published {[true,false].sample}
-    # association :recipe
-
+    category_id {Faker::Number.digit}
+    title { Faker::Lorem.word }
+    published { [true, false].sample }
   end
 end

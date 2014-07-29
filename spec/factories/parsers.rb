@@ -2,5 +2,8 @@
 
 FactoryGirl.define do
   factory :parser do
+    association :recipes
+    title {Faker::Lorem.word}
+    url {Faker::Internet.url}
   end
 end
