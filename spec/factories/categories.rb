@@ -2,5 +2,10 @@
 
 FactoryGirl.define do
   factory :category do
+
+    title {Faker::Lorem.word}
+    published {[true,false].sample}
+    # association :recipe
+
   end
 end
