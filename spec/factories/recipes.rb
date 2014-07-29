@@ -6,5 +6,6 @@ FactoryGirl.define do
     published { [true, false].sample }
     ingredient { Faker::Lorem.sentence }
     association :category
+    association :parser
   end
 end
