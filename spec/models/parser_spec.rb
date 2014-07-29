@@ -1,5 +1,7 @@
 require 'rails_helper'
 
-RSpec.describe Parser, :type => :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+describe Parser do
+  it "has a valid factory" do
+    expect(FactoryGirl.build(:parser)).to be_valid
+  end
 end
