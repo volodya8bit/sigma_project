@@ -12,13 +12,10 @@
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
-<<<<<<< HEAD
 /.idea
 config/database.yml
 /config/database.yml
-/db/schema.rb
 .gitignore
-=======
 #ignore folder rubymine
 .idea
 #ignore config database
