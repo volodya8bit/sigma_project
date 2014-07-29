@@ -17,7 +17,6 @@ ActiveRecord::Schema.define(version: 20140729085045) do
   enable_extension "plpgsql"
 
   create_table "categories", force: true do |t|
-    t.integer  "category_id"
     t.string   "title"
     t.boolean  "published"
     t.datetime "created_at"
@@ -39,7 +38,7 @@ ActiveRecord::Schema.define(version: 20140729085045) do
   end
 
   create_table "recipes", force: true do |t|
-    t.integer  "categories_id"
+    t.integer  "category_id"
     t.text     "text"
     t.boolean  "published"
     t.text     "ingredient"
