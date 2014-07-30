@@ -1,0 +1,16 @@
+language: ruby
+rvm:
+  - 2.1.1
+env:
+  - DB=postgresql
+script:
+  - RAILS_ENV=test bundle exec rake db:migrate --trace
+  - bundle exec rake
+before_script:
+  - cp config/database.yml.travis config/database.yml
+  - psql -c 'create database travis_ci_test' -U postgres
+deploy:
+  provider: heroku
+  api_key: 5e06ff4d-bc3a-41db-b337-21fb7971d426
+  app: sigma-project
+  repo: volodya8bit/sigma_project
