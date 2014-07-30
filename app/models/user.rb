@@ -3,7 +3,7 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
-  has_many :favorite
+  has_many :favorites
   extend Enumerize
   enumerize :role, in: {user: 1, admin: 2}
 end
