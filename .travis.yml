@@ -14,3 +14,6 @@ deploy:
   api_key: 5e06ff4d-bc3a-41db-b337-21fb7971d426
   app: sigma-project
   repo: volodya8bit/sigma_project
+  run:
+    - "rake db:migrate"
+    - "rake cleanup"
