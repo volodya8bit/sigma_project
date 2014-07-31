@@ -13,3 +13,5 @@
  *= require_tree .
  *= require_self
  */
+.check_1 {float: left}
+.check_2 {margin-left: 20px}
