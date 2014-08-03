@@ -9,3 +9,7 @@
 unless User.any?
   User.create(email: Faker::Internet.email, password: Faker::Internet.password, role: "Admin")
 end
+
+unless Category.any?
+  Category.create(title: "булочки", published: true)
+end

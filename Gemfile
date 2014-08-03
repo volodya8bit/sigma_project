@@ -12,7 +12,8 @@ group :development, :test do
   gem 'pry-nav'
   gem 'pry-remote'
   gem 'factory_girl_rails'
-  gem 'faker' 
+  gem 'faker'
+  gem 'rspec-rails' 
 end
  
 group :test do
