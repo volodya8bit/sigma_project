@@ -8,7 +8,12 @@ table.table
       tr
         td= link_to c.title, category_path(c)
         td
-          = link_to 'Edit', edit_category_path(c)
-          |  |
-          = link_to 'delete', category_path(c), method: :delete, data: { confirm: 'sure?' }
+          - if can? :update, c
+            = link_to 'Edit', edit_category_path(c)
+            |  |
+          - if can? :destroy, c
+            = link_to 'Delete', category_path(c), method: :delete, data: { confirm: 'sure?' }
+          - else
+            = link_to 'Show', category_path(c)
+= will_paginate @categories
 = link_to 'New', new_category_path, method: :get, class: 'btn'
