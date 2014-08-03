@@ -52,6 +52,10 @@ gem 'enumerize'
 
 gem "twitter-bootstrap-rails"
 
+gem 'slim-rails'
+gem 'cancancan', '~> 1.7'
+gem 'simple_form'
+
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 
