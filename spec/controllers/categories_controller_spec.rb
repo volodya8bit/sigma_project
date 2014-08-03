@@ -40,3 +40,4 @@ describe CategoriesController do
   end
 end
 end
+end
