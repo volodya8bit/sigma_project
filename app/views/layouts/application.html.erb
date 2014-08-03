@@ -69,7 +69,9 @@
           <div class="well sidebar-nav">
             <ul class="nav nav-list">
               <li class="nav-header">Sidebar</li>
-              <li><%= link_to "Home", "/#"  %></li>
+              <% if current_user %>
+              <li><%= link_to "Categories", "/categories"  %></li>
+              <% end %>
             </ul>
           </div><!--/.well -->
         </div><!--/span-->

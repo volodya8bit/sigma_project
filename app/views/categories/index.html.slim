@@ -1,0 +1,14 @@
+table.table
+  thead
+    tr
+      th= Category.human_attribute_name(:title)
+      th Actions
+  tbody
+    - @categories.each do |c|
+      tr
+        td= link_to c.title, category_path(c)
+        td
+          = link_to 'Edit', edit_category_path(c)
+          |  |
+          = link_to 'delete', category_path(c), method: :delete, data: { confirm: 'sure?' }
+= link_to 'New', new_category_path, method: :get, class: 'btn'
