@@ -1,5 +1,13 @@
 Rails.application.routes.draw do
+  get 'categories/index'
+
+  get 'categories/show'
+  
+  get 'categories/new'
+  
+  get 'categories/edit'
   devise_for :users
+
   resources :categories
 
   # The priority is based upon order of creation: first created -> highest priority.

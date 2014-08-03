@@ -1,19 +1,15 @@
 table.table
   thead
     tr
-      th= Category.human_attribute_name(:title)
+      th= Category.human_attribute_name(:title)      
       th Actions
   tbody
-    - @categories.each do |c|
+    - @categories.each do |p|
       tr
-        td= link_to c.title, category_path(c)
+        td= link_to p.title, category_path(p)
         td
-          - if can? :update, c
-            = link_to 'Edit', edit_category_path(c)
-            |  |
-          - if can? :destroy, c
-            = link_to 'Delete', category_path(c), method: :delete, data: { confirm: 'sure?' }
-          - else
-            = link_to 'Show', category_path(c)
+          = link_to 'Edit', edit_category_path(p)
+          |  |
+          = link_to 'delete', category_path(p), method: :delete, data: { confirm: 'sure?' }
 = will_paginate @categories
 = link_to 'New', new_category_path, method: :get, class: 'btn'

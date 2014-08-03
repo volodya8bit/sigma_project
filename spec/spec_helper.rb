@@ -45,6 +45,9 @@ Spork.prefork do
     config.after(:all, type: :request) do
       WebMock.disable_net_connect! :allow_localhost => false
     end
+    
+    config.infer_spec_type_from_file_location!
+    config.include Devise::TestHelpers, :type => :controller 
 
   end
 end
