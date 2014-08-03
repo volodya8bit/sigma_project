@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
-  get 'categories/index'
+  get 'categories/create'
+
+  get 'categories/read'
+
+  get 'categories/update'
+
+  get 'categories/delete'
 
   devise_for :users
   resources :categories

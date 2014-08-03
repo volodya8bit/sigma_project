@@ -1,5 +1,14 @@
 class CategoriesController < ApplicationController
-  def index
+  def create
+  end
+
+  def read
     @categories = Category.all
+  end
+
+  def update
+  end
+
+  def delete
   end
 end
