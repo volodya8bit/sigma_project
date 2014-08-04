@@ -27,13 +27,13 @@ describe CategoriesController do
    
       it "assigns the requested project to subject" do
         get :index
-        expect(assigns(:category)).to eq([subject])
+        expect(assigns(:categories)).to eq([subject])
       end
     end
     describe "GET #show" do
       it "assigns the requested project to subject" do
         get :show, id: subject
-        expect(assigns(:category)).to eq([subject])
+        expect(assigns(:category)).to eq(subject)
       end
 
       it "renders the :show view" do
@@ -56,18 +56,18 @@ describe CategoriesController do
     
     describe "GET #edit" do
       it "assigns the requested project to subject" do
-        get :edit id: subject
-        expect(assigns(:category)).to eq([subject])
+        get :edit, id: subject
+        expect(assigns(:category)).to eq(subject)
       end
 
       it "renders the :edit view" do
-        get :edit id: subject
+        get :edit, id: subject
         expect(response).to render_template :edit
       end      
     end
 
     describe "POST #create" do
-      contect "with valid attributes" do
+      context "with valid attributes" do
         it "create new object" do
           expect{
             post :create, category: FactoryGirl.attributes_for(:category)
@@ -77,7 +77,7 @@ describe CategoriesController do
         it "redirect to index path" do
           
             post :create, category: FactoryGirl.attributes_for(:category)
-            expect(response).to redirect_to projects_path
+            expect(response).to redirect_to categories_path
         end 
       end      
     end
