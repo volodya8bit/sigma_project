@@ -1,0 +1,57 @@
+doctype html
+html[lang="en"]
+  head
+    meta[charset="utf-8"]
+    meta[http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"]
+    meta[name="viewport" content="width=device-width, initial-scale=1.0"]
+    title
+      = content_for?(:title) ? yield(:title) : "SigmaProject"
+    = csrf_meta_tags
+    = stylesheet_link_tag "application", :media => "all"
+    = favicon_link_tag 'apple-touch-icon-144x144-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png', :sizes => '144x144'
+    = favicon_link_tag 'apple-touch-icon-114x114-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png', :sizes => '114x114'
+    = favicon_link_tag 'apple-touch-icon-72x72-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png', :sizes => '72x72'
+    = favicon_link_tag 'apple-touch-icon-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png'
+    = favicon_link_tag 'favicon.ico', :rel => 'shortcut icon'
+    = javascript_include_tag "application"
+  body
+    .navbar.navbar-fluid-top
+      .navbar-inner
+        .container-fluid
+          a.btn.btn-navbar[data-target=".nav-collapse" data-toggle="collapse"]
+            span.icon-bar
+            span.icon-bar
+            span.icon-bar
+          a.brand[href="/#"]
+            | SigmaProject
+          .container-fluid.nav-collapse
+            ul.nav
+              li
+                = link_to "Home", "/#"
+              - if current_user
+                li
+                  = link_to "Logout", destroy_user_session_path, :method => 'delete'
+                li
+                  = link_to "Edit", edit_user_registration_path, :method => 'get'
+              - else
+                li
+                  = link_to "Registration", new_user_registration_path, :method => 'get'
+                li
+                  = link_to "Sign in", new_user_session_path, :method => 'get'
+    .container-fluid
+      .row-fluid
+        .span3
+          .well.sidebar-nav
+            ul.nav.nav-list
+              li.nav-header
+                | Sidebar
+              - if current_user
+                li
+                  /= link_to "Categories", "/categories"
+                  = link_to "Categories", categories_path
+        .span9
+          = bootstrap_flash
+          = yield
+      footer
+        p
+          | © Company 2014

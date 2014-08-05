@@ -14,6 +14,10 @@ Spork.prefork do
   ActiveRecord::Migration.check_pending! if defined?(ActiveRecord::Migration)
 
   RSpec.configure do |config|
+    config.infer_spec_type_from_file_location!
+
+    config.include Devise::TestHelpers, :type => :controller
+
     config.use_transactional_fixtures = false
 
     config.infer_base_class_for_anonymous_controllers = false
@@ -41,6 +45,9 @@ Spork.prefork do
     config.after(:all, type: :request) do
       WebMock.disable_net_connect! :allow_localhost => false
     end
+    
+    config.infer_spec_type_from_file_location!
+    config.include Devise::TestHelpers, :type => :controller 
 
   end
 end
