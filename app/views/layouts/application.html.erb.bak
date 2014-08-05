@@ -46,7 +46,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </a>
-          <a class="brand" href="/#">SigmaProject</a>
+          <a class="brand" href="/app/assets/javascripts#">SigmaProject</a>
           <div class="container-fluid nav-collapse">
             <ul class="nav">
               	<li><%= link_to "Home", "/#"  %></li>
