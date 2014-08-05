@@ -2,6 +2,8 @@ Rails.application.routes.draw do
   devise_for :users
 
   resources :categories, only: [:index, :show, :new, :edit]
+  resource :categorie
+  
   # get 'categories/index'
   #
   # get 'categories/show'
