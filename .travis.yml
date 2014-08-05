@@ -11,8 +11,11 @@ before_script:
   - psql -c 'create database travis_ci_test' -U postgres
 deploy:
   provider: heroku
-  api_key: 5e06ff4d-bc3a-41db-b337-21fb7971d426
+  api_key:
+    secure: "IDqpUlK6NK22EuODyZlO/nMCkhNGxEnWxOi4SMtU+qxKsBKJMRpw4rhEjid59gChOEVEAHTGZQo/ZQCidAT5/hGPE8DIv1TOFT52p9w3VWU52myhWlS6AF6WCGsIbKgJs2UqC2A/Ccl6iAAOD569XJJdJbD4MgMmp2Ez98QM+yI="
   app: sigma-project
   repo: volodya8bit/sigma_project
   run:
     - "rake db:migrate"
+    - restart
+    - "rake cleanup"
