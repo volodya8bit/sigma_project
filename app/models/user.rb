@@ -5,5 +5,5 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
   has_many :favorites
   extend Enumerize
-  enumerize :role, in: {user: 1, admin: 2}
+  enumerize :role, in: {user: 1, admin: 2}, default: :user
 end
