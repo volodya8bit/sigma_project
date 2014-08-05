@@ -7,7 +7,7 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 unless User.any?
-  User.first_or_create(email: 'admin@admin.com', password: '12345678', role: '2')
+  User.first_or_create(email: 'admin@admin.com', password: '12345678', role: 2)
 end
 
 unless Category.any?
