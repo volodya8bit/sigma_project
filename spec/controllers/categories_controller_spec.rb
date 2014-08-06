@@ -11,20 +11,20 @@ describe CategoriesController do
     end
   end
   
-  context "when user logged in" do
-    let(:user) { FactoryGirl.create(:user) }
-    subject { FactoryGirl.create(:category)} 
-    
+  context "when user logged in with role admin" do
+    let(:user) { FactoryGirl.create(:user, role: :admin) }
+    subject { FactoryGirl.create(:category)}
+
     before do
       sign_in user
     end
-    
+
     describe "GET #index" do
       it "renders the :index view" do
         get :index
         expect(response).to render_template :index
       end
-   
+
       it "assigns the requested project to subject" do
         get :index
         expect(assigns(:categories)).to eq([subject])
@@ -39,8 +39,8 @@ describe CategoriesController do
       it "renders the :show view" do
         get :show, id: subject
         expect(response).to render_template :show
-      end 
-      
+      end
+
     end
     describe "GET #new" do
       it "assigns the requested project to subject" do
@@ -51,9 +51,9 @@ describe CategoriesController do
       it "renders the :new view" do
         get :new
         expect(response).to render_template :new
-      end      
+      end
     end
-    
+
     describe "GET #edit" do
       it "assigns the requested project to subject" do
         get :edit, id: subject
@@ -63,7 +63,7 @@ describe CategoriesController do
       it "renders the :edit view" do
         get :edit, id: subject
         expect(response).to render_template :edit
-      end      
+      end
     end
 
     describe "POST #create" do
@@ -73,13 +73,92 @@ describe CategoriesController do
             post :create, category: FactoryGirl.attributes_for(:category)
           }.to change(Category, :count).by(1)
         end
-        
+
         it "redirect to index path" do
-          
-            post :create, category: FactoryGirl.attributes_for(:category)
-            expect(response).to redirect_to categories_path
-        end 
-      end      
+
+          post :create, category: FactoryGirl.attributes_for(:category)
+          expect(response).to redirect_to categories_path
+        end
+      end
     end
+  end
+
+  context "when user logged in with role user" do
+    let(:user) { FactoryGirl.create(:user, role: :user) }
+    subject { FactoryGirl.create(:category)}
+
+    before do
+      sign_in user
+    end
+
+    describe "GET #index" do
+      it "renders the :index view" do
+        get :index
+        expect(response).to render_template :index
+      end
+
+      it "assigns the requested project to subject" do
+        get :index
+        expect(assigns(:categories)).to eq([subject])
+      end
+    end
+    describe "GET #show" do
+      it "assigns the requested project to subject" do
+        get :show, id: subject
+        expect(assigns(:category)).to eq(subject)
+      end
+
+      it "renders the :show view" do
+        get :show, id: subject
+        expect(response).to render_template :show
+      end
+
+    end
+=begin
+    describe "GET #new" do
+      it "assigns the requested project to subject" do
+        get :new
+        expect(assigns(:category)).to be_new_record
+      end
+
+      it "renders the :new view" do
+        get :new
+        expect(response).to render_template :new
+      end
+    end
+=end
+
+=begin
+    describe "GET #edit" do
+      it "assigns the requested project to subject" do
+        get :edit, id: subject
+        expect(assigns(:category)).to eq(subject)
+      end
+
+      it "renders the :edit view" do
+        get :edit, id: subject
+        expect(response).to render_template :edit
+      end
+    end
+=end
+
+=begin
+    describe "POST #create" do
+      context "with valid attributes" do
+        it "create new object" do
+          expect{
+            post :create, category: FactoryGirl.attributes_for(:category)
+          }.to change(Category, :count).by(1)
+        end
+
+        it "redirect to index path" do
+
+          post :create, category: FactoryGirl.attributes_for(:category)
+          expect(response).to redirect_to categories_path
+
+        end
+      end
+    end
+=end
   end
 end
