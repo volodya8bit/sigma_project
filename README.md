@@ -1,5 +1,6 @@
-**Branch master:**[![Build Status](https://travis-ci.org/volodya8bit/sigma_project.svg?branch=master)](https://travis-ci.org/volodya8bit/sigma_project)
-**Branch dev:**[![Build Status](https://travis-ci.org/volodya8bit/sigma_project.svg?branch=dev)](https://travis-ci.org/volodya8bit/sigma_project)
+**Branch master:** [![Build Status](https://travis-ci.org/volodya8bit/sigma_project.svg?branch=master)](https://travis-ci.org/volodya8bit/sigma_project)
+
+**Branch dev:** [![Build Status](https://travis-ci.org/volodya8bit/sigma_project.svg?branch=dev)](https://travis-ci.org/volodya8bit/sigma_project)
 
 ##Агрегатор кулинарных рецептов на русском языке.
 
