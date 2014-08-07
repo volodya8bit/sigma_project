@@ -59,6 +59,8 @@ gem 'simple_form'
 
 gem 'will_paginate', '~> 3.0'
 
+gem 'nested_form'
+
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 

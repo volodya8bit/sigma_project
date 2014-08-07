@@ -5,4 +5,5 @@ class Category < ActiveRecord::Base
     where("title like ?", "%#{query}%")
   end
 
+  validates :title, uniqueness: true
 end
