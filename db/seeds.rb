@@ -11,6 +11,7 @@ unless User.any?
   User.first_or_create(email: 'admin2@sigma.com', password: '12345678', role: 2)
   User.create(email: "admin@sigma.com", password: "12345678", role: 2)
   User.create(email: "user@user.com", password: "12345678", role: 1)
+  User.create(email: "adm@adm.net", password: "12345678", role: 2)
 end
 
 unless Category.any?
