@@ -16,7 +16,7 @@ deploy:
     dev: sigma-project-dev
   run:
   - rake db:migrate
+  - rake db:seed
   - restart
-  - rake cleanup
   api_key:
     secure: EB3UN8SUXVn3uUagbRqtaNcFpAUQNornFOM56+5cfLIl4sYYodisUAdFBkXBzM5Yn4pgRuaGN62fv+amTot9JmjC+7WYCXd++2J2Dc3sJBGfBtO7zqU5iBJNelskL6fZWXLhHXjvWu2jBb8gPG6v+THtXyHPCAH7/4YcmIatNgA=
