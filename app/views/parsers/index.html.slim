@@ -2,13 +2,13 @@ table.table
   thead
     tr
       th= Parser.human_attribute_name(:title)
-      th= Parser.human_attribute_name(:parser_url)
+      th= Parser.human_attribute_name(:url)
       th Actions
   tbody
     - @parsers.each do |p|
       tr
         td= link_to p.title, parser_path(p)
-        td= link_to p.parser_url, parser_path(p)
+        td= link_to p.url, parser_path(p)
         td
           - if can? :create, p
             = link_to 'Edit', edit_parser_path(p)
