@@ -8,13 +8,13 @@ table.table
   thead
     tr
       th= Recipe.human_attribute_name(:title)
-      th= Recipe.human_attribute_name(:text)
+      th= Recipe.human_attribute_name(:category_id)
       th Actions
   tbody
     - @recipes.each do |p|
       tr
         td= link_to p.title, recipe_path(p)
-        td= link_to p.text, recipe_path(p)
+        td= p.category_id
         td
           - if can? :create, p
             = link_to 'Edit', edit_recipe_path(p)

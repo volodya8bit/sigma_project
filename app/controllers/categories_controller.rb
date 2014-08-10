@@ -15,6 +15,7 @@ class CategoriesController < ApplicationController
   end
 
   def show
+    @recipes = Recipe.all
   end
 
   def new

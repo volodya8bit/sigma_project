@@ -34,7 +34,7 @@ class RecipesController < ApplicationController
   end
 
   def update
-    if @recipe.update(parser_params)
+    if @recipe.update(recipe_params)
       redirect_to recipes_path
     else
       render :edit
@@ -53,6 +53,6 @@ class RecipesController < ApplicationController
 
   private
   def recipe_params
-    params.require(:recipe).permit(:text)
+    params.require(:recipe).permit(:category_id, :title, :text)
   end
 end

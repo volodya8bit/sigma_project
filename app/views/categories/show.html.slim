@@ -1,5 +1,11 @@
+- provide(:title, @category.title)
 h1 Category
 b= @category.title
-p= @category.published
+p= @category.recipes.count
+
+= @category.recipes
+
+
+
 = link_to 'All categories', categories_path
 
