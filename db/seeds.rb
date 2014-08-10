@@ -30,7 +30,7 @@ for value in (1..10)
 end
 
 10.times do |i|
-  Recipe.create(text: Faker::Lorem.paragraph{i}, published: [true, false].sample)
+  Recipe.create(title:Faker::Lorem.word ,text: Faker::Lorem.paragraph{i}, published: [true, false].sample)
 end
 
 

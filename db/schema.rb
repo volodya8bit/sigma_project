@@ -40,6 +40,7 @@ ActiveRecord::Schema.define(version: 20140729085045) do
   create_table "recipes", force: true do |t|
     t.integer  "category_id"
     t.integer  "parser_id"
+    t.string   "title"
     t.text     "text"
     t.boolean  "published"
     t.text     "ingredient"
