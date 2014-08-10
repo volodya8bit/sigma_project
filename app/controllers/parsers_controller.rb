@@ -35,7 +35,7 @@ class ParsersController < ApplicationController
 
   def update
     if @parser.update(parser_params)
-      redirect_to categories_path
+      redirect_to parsers_path
     else
       render :edit
     end
