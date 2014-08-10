@@ -1,9 +1,12 @@
 Rails.application.routes.draw do
   devise_for :users
 
-  resources :categories
-  resources :parsers
+  resources :categories do
+    resources :recipes
+  end
   resources :recipes
+  resources :parsers
+
 
 
 

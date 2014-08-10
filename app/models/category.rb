@@ -5,5 +5,7 @@ class Category < ActiveRecord::Base
     where("title like ?", "%#{query}%")
   end
 
+  accepts_nested_attributes_for :recipes, allow_destroy: true
+
   validates :title, uniqueness: true
 end

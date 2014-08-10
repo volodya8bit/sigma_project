@@ -8,6 +8,7 @@ class RecipesController < ApplicationController
     if params[:search]
       @recipes = Recipe.search(params[:search]).order("created_at DESC").paginate(:page => params[:page], :per_page => 5)
     else
+#      @recipes = @category.recipes
       @recipes = Recipe.order("created_at DESC").paginate(:page => params[:page], :per_page => 5)
     end
 
@@ -21,9 +22,9 @@ class RecipesController < ApplicationController
   end
 
   def create
-    @recipe = Recipe.new(recipe_params)
+    @recipe = @category.recipes.new(recipe_params)
     if @recipe.save
-      redirect_to recipes_path
+      redirect_to category_recipes_path(@category)
     else
       render :new
     end
