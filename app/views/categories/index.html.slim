@@ -7,11 +7,13 @@
 table.table
   thead
     tr
+      th= Category.human_attribute_name(:id)
       th= Category.human_attribute_name(:title)      
       th Actions
   tbody
     - @categories.each do |p|
       tr
+        td= p.id
         td= link_to p.title, category_path(p)
         td
           - if can? :create, p
