@@ -1,7 +1,7 @@
 - if current_user
   = form_tag(recipes_path, :method => "get", class: "navbar-form pull-right", id: "searh-form") do
     .input-append
-      = text_field_tag :search, params[:search], placeholder: "Search"
+      = text_field_tag :search, params[:search], placeholder: "Search recipe"
       button.btn[type="submit"]
         i.icon-search
 table.table
