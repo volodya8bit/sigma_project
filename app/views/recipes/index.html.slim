@@ -1,19 +1,19 @@
 table.table
   thead
     tr
-      th= Category.human_attribute_name(:title)      
+      th= Recipe.human_attribute_name(:text)
       th Actions
   tbody
-    - @categories.each do |p|
+    - @recipes.each do |p|
       tr
-        td= link_to p.title, category_path(p)
+        td= link_to p.text, recipe_path(p)
         td
           - if can? :create, p
-            = link_to 'Edit', edit_category_path(p)
+            = link_to 'Edit', edit_recipe_path(p)
             |  |
-            = link_to 'Delete', category_path(p), method: :delete, data: { confirm: 'sure?' }
+            = link_to 'Delete', recipe_path(p), method: :delete, data: { confirm: 'sure?' }
           - else
-            = link_to 'Show', category_path(p)
-= will_paginate @categories
+            = link_to 'Show', recipe_path(p)
+= will_paginate @recipes
 - if can? :create, current_user
-  = link_to 'New', new_category_path, method: :get, class: 'btn'
+  = link_to 'New', new_recipe_path, method: :get, class: 'btn'
