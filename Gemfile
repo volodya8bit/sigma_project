@@ -5,14 +5,12 @@ source 'https://rubygems.org'
 gem 'rails', '4.1.4'
 
 
-
 group :development, :test do
   gem 'pry-rails'
   gem 'pry'
   gem 'pry-nav'
   gem 'pry-remote'
   gem 'factory_girl_rails'
-  gem 'faker'
   gem 'rspec-rails' 
 end
  
@@ -63,6 +61,8 @@ gem 'nested_form'
 
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
+
+gem 'faker'
 
 # Use unicorn as the app server
 # gem 'unicorn'
