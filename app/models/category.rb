@@ -1,9 +1,7 @@
 class Category < ActiveRecord::Base
   has_many :recipes
 
-  def self.search(query)
-    where("title like ?", "%#{query}%")
-  end
+  scope :search, ->(query) {where("title like ?", query)}
 
   accepts_nested_attributes_for :recipes, allow_destroy: true
 
