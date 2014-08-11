@@ -29,8 +29,8 @@ for value in (1..10)
   Parser.create(title: Faker::Lorem.word ,url: Faker::Internet.url(host = 'yandex.ru/', path = value))
 end
 
-10.times do |i|
-  Recipe.create(title:Faker::Lorem.word ,text: Faker::Lorem.paragraph{i}, published: [true, false].sample)
+3.times do |i|
+  Recipe.create(category_id: i, title:Faker::Lorem.word ,text: Faker::Lorem.paragraph{i}, published: [true, false].sample)
 end
 
 

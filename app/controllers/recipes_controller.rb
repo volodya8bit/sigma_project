@@ -22,9 +22,9 @@ class RecipesController < ApplicationController
   end
 
   def create
-    @recipe = @category.recipes.new(recipe_params)
+    @recipe = Recipe.new(recipe_params)
     if @recipe.save
-      redirect_to category_recipes_path(@category)
+      redirect_to recipes_path
     else
       render :new
     end
