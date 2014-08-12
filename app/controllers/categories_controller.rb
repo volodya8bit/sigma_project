@@ -5,7 +5,6 @@ class CategoriesController < ApplicationController
 
 
   def index
-    # @categories = Category.paginate(:page => params[:page], :per_page => 5)
     if params[:search]
       @categories = Category.search(params[:search]).order("created_at ASC").paginate(:page => params[:page], :per_page => 5)
     else
@@ -15,9 +14,6 @@ class CategoriesController < ApplicationController
   end
 
   def show
-   # @search = Recipe.category(@category).search(params[:q])
-   # @recipes = Recipe.find(params[:id])
-        # @search.result(distinct: true).sort_by_dt.page(params[:page]).per(8)
   end
 
   def new

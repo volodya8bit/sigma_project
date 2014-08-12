@@ -1,7 +1,7 @@
 class Category < ActiveRecord::Base
   has_many :recipes
 
-  scope :search, ->(query) {where("title ~~* ?", query)}
+  scope :search, ->(query) { where("title ~~* ?", query) }
 
   accepts_nested_attributes_for :recipes, allow_destroy: true
 
