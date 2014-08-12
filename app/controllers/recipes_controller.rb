@@ -6,10 +6,13 @@ class RecipesController < ApplicationController
 
   def index
     if params[:search]
-      @recipes = Recipe.search(params[:search]).order("created_at DESC").paginate(:page => params[:page], :per_page => 5)
+      @recipes = Recipe.search(params[:search]).order("created_at ASC").paginate(:page => params[:page], :per_page => 5)
+    elsif params[:category_id]
+      @recipes = Recipe.find_by_category_id(params[:category_id])
+      p @recipes
     else
 #      @recipes = @category.recipes
-      @recipes = Recipe.order("created_at DESC").paginate(:page => params[:page], :per_page => 5)
+      @recipes = Recipe.order("created_at ASC").paginate(:page => params[:page], :per_page => 5)
     end
 
   end
