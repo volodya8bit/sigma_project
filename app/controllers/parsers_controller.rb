@@ -1,6 +1,5 @@
 class ParsersController < ApplicationController
 
-#  load_resource :parser, only: [:edit, :show, :update, :destroy]
   load_and_authorize_resource param_method: :parser_params
 
 

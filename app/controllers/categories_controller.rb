@@ -1,6 +1,5 @@
 class CategoriesController < ApplicationController
 
-#  load_resource :category, only: [:edit, :show, :update, :destroy]
   load_and_authorize_resource param_method: :category_params
 
 
