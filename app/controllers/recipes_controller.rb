@@ -8,8 +8,7 @@ class RecipesController < ApplicationController
     if params[:search]
       @recipes = Recipe.search(params[:search]).order("created_at ASC").paginate(:page => params[:page], :per_page => 5)
     elsif params[:category_id]
-      @recipes = Recipe.find_by_category_id(params[:category_id])
-      p @recipes
+      @recipes = Recipe.where(category_id: params[:category_id]).order("created_at ASC").paginate(:page => params[:page], :per_page => 5)
     else
 #      @recipes = @category.recipes
       @recipes = Recipe.order("created_at ASC").paginate(:page => params[:page], :per_page => 5)
