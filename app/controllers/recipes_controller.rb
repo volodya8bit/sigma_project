@@ -1,6 +1,6 @@
 class RecipesController < ApplicationController
 
-  before_action :find_recipe, only: [:edit, :show, :update, :destroy]
+#  before_action :find_recipe, only: [:edit, :show, :update, :destroy]
   load_and_authorize_resource param_method: :recipe_params
 
 
@@ -10,7 +10,6 @@ class RecipesController < ApplicationController
     elsif params[:category_id]
       @recipes = Recipe.where(category_id: params[:category_id]).order("created_at ASC").paginate(:page => params[:page], :per_page => 5)
     else
-#      @recipes = @category.recipes
       @recipes = Recipe.order("created_at ASC").paginate(:page => params[:page], :per_page => 5)
     end
 
