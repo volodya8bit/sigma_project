@@ -6,5 +6,5 @@ class Recipe < ActiveRecord::Base
   scope :search, ->(query) { where("title ~~* ?", query) }
 
   validates :title, :text, presence: true
-  validates_associated :category
+  # validates_associated :category
 end
