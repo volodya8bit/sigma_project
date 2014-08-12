@@ -7,4 +7,6 @@ class Recipe < ActiveRecord::Base
     where("title like ?", "%#{query}%")
   end
 
+  validates :title, :text, presence: true
+  validates_associated :category
 end

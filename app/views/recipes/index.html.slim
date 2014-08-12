@@ -14,7 +14,7 @@ table.table
     - @recipes.each do |p|
       tr
         td= link_to p.title, recipe_path(p)
-        td= p.category_id
+        td= p.category.title
         td
           - if can? :create, p
             = link_to 'Edit', edit_recipe_path(p)

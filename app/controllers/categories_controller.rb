@@ -15,7 +15,9 @@ class CategoriesController < ApplicationController
   end
 
   def show
-    @recipes = Recipe.all
+   # @search = Recipe.category(@category).search(params[:q])
+   # @recipes = Recipe.find(params[:id])
+        # @search.result(distinct: true).sort_by_dt.page(params[:page]).per(8)
   end
 
   def new
