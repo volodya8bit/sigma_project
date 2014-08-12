@@ -16,12 +16,13 @@ table.table
         td= p.id
         td= link_to p.title, category_recipes_path(p)
         td
-          - if can? :create, p
+          - if can? :create  , p
             = link_to 'Edit', edit_category_path(p)
             |  |
+          - if can? :destroy, p
             = link_to 'Delete', category_path(p), method: :delete, data: { confirm: 'sure?' }
           - else
             = link_to 'Show', category_path(p)
 = will_paginate @categories
-- if can? :create, current_user
+- if can? :create, @categories
   = link_to 'New', new_category_path, method: :get, class: 'btn'
