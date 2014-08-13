@@ -114,51 +114,5 @@ describe CategoriesController do
       end
 
     end
-=begin
-    describe "GET #new" do
-      it "assigns the requested project to subject" do
-        get :new
-        expect(assigns(:category)).to be_new_record
-      end
-
-      it "renders the :new view" do
-        get :new
-        expect(response).to render_template :new
-      end
-    end
-=end
-
-=begin
-    describe "GET #edit" do
-      it "assigns the requested project to subject" do
-        get :edit, id: subject
-        expect(assigns(:category)).to eq(subject)
-      end
-
-      it "renders the :edit view" do
-        get :edit, id: subject
-        expect(response).to render_template :edit
-      end
-    end
-=end
-
-=begin
-    describe "POST #create" do
-      context "with valid attributes" do
-        it "create new object" do
-          expect{
-            post :create, category: FactoryGirl.attributes_for(:category)
-          }.to change(Category, :count).by(1)
-        end
-
-        it "redirect to index path" do
-
-          post :create, category: FactoryGirl.attributes_for(:category)
-          expect(response).to redirect_to categories_path
-
-        end
-      end
-    end
-=end
   end
 end
