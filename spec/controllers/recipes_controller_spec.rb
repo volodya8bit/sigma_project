@@ -1,7 +1,6 @@
 require 'rails_helper'
-require 'spec_helper'
 
-describe CategoriesController do
+describe ParsersController do
   context "when user not logged in" do
     describe "GET #index" do
       it "redirects to login page" do
@@ -10,10 +9,10 @@ describe CategoriesController do
       end
     end
   end
-  
+
   context "when user logged in with role admin" do
     let(:user) { FactoryGirl.create(:user, role: :admin) }
-    subject { FactoryGirl.create(:category)}
+    subject { FactoryGirl.create(:parser)}
 
     before do
       sign_in user
@@ -27,13 +26,13 @@ describe CategoriesController do
 
       it "assigns the requested project to subject" do
         get :index
-        expect(assigns(:categories)).to eq([subject])
+        expect(assigns(:parsers)).to eq([subject])
       end
     end
     describe "GET #show" do
       it "assigns the requested project to subject" do
         get :show, id: subject
-        expect(assigns(:category)).to eq(subject)
+        expect(assigns(:parser)).to eq(subject)
       end
 
       it "renders the :show view" do
@@ -45,7 +44,7 @@ describe CategoriesController do
     describe "GET #new" do
       it "assigns the requested project to subject" do
         get :new
-        expect(assigns(:category)).to be_new_record
+        expect(assigns(:parser)).to be_new_record
       end
 
       it "renders the :new view" do
@@ -57,7 +56,7 @@ describe CategoriesController do
     describe "GET #edit" do
       it "assigns the requested project to subject" do
         get :edit, id: subject
-        expect(assigns(:category)).to eq(subject)
+        expect(assigns(:parser)).to eq(subject)
       end
 
       it "renders the :edit view" do
@@ -70,14 +69,14 @@ describe CategoriesController do
       context "with valid attributes" do
         it "create new object" do
           expect{
-            post :create, category: FactoryGirl.attributes_for(:category)
-          }.to change(Category, :count).by(1)
+            post :create, parser: FactoryGirl.attributes_for(:parser)
+          }.to change(Parser, :count).by(1)
         end
 
         it "redirect to index path" do
 
-          post :create, category: FactoryGirl.attributes_for(:category)
-          expect(response).to redirect_to categories_path
+          post :create, parser: FactoryGirl.attributes_for(:parser)
+          expect(response).to redirect_to parsers_path
         end
       end
     end
@@ -85,7 +84,7 @@ describe CategoriesController do
 
   context "when user logged in with role user" do
     let(:user) { FactoryGirl.create(:user, role: :user) }
-    subject { FactoryGirl.create(:category)}
+    subject { FactoryGirl.create(:parser)}
 
     before do
       sign_in user
@@ -99,13 +98,13 @@ describe CategoriesController do
 
       it "assigns the requested project to subject" do
         get :index
-        expect(assigns(:categories)).to eq([subject])
+        expect(assigns(:parsers)).to eq([subject])
       end
     end
     describe "GET #show" do
       it "assigns the requested project to subject" do
         get :show, id: subject
-        expect(assigns(:category)).to eq(subject)
+        expect(assigns(:parser)).to eq(subject)
       end
 
       it "renders the :show view" do

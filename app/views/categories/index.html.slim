@@ -1,15 +1,28 @@
+- if current_user
+  = form_tag(categories_path, :method => "get", class: "navbar-form pull-right", id: "searh-form") do
+    .input-append
+      = text_field_tag :search, params[:search], placeholder: "Search category"
+      button.btn[type="submit"]
+        i.icon-search
 table.table
   thead
     tr
+      th= Category.human_attribute_name(:id)
       th= Category.human_attribute_name(:title)      
       th Actions
   tbody
     - @categories.each do |p|
       tr
-        td= link_to p.title, category_path(p)
+        td= p.id
+        td= link_to p.title, category_recipes_path(p)
         td
-          = link_to 'Edit', edit_category_path(p)
-          |  |
-          = link_to 'delete', category_path(p), method: :delete, data: { confirm: 'sure?' }
+          - if can? :create  , p
+            = link_to 'Edit', edit_category_path(p)
+            |  |
+          - if can? :destroy, p
+            = link_to 'Delete', category_path(p), method: :delete, data: { confirm: 'sure?' }
+          - else
+            = link_to 'Show', category_path(p)
 = will_paginate @categories
-= link_to 'New', new_category_path, method: :get, class: 'btn'
+- if can? :create, @categories
+  = link_to 'New', new_category_path, method: :get, class: 'btn'

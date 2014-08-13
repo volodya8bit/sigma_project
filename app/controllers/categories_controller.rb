@@ -1,10 +1,15 @@
 class CategoriesController < ApplicationController
 
-  before_action :find_category, only: [:edit, :show, :update, :destroy]
+  load_and_authorize_resource param_method: :category_params
 
 
   def index
-    @categories = Category.paginate(:page => params[:page], :per_page => 5)
+    if params[:search]
+      @categories = Category.search(params[:search]).paginate(:page => params[:page], :per_page => 5)
+    else
+      @categories = Category.paginate(:page => params[:page], :per_page => 5)
+    end
+
   end
 
   def show
