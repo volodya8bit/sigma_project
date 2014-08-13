@@ -5,9 +5,9 @@ class CategoriesController < ApplicationController
 
   def index
     if params[:search]
-      @categories = Category.search(params[:search]).order("created_at ASC").paginate(:page => params[:page], :per_page => 5)
+      @categories = Category.search(params[:search]).paginate(:page => params[:page], :per_page => 5)
     else
-      @categories = Category.order("created_at ASC").paginate(:page => params[:page], :per_page => 5)
+      @categories = Category.paginate(:page => params[:page], :per_page => 5)
     end
 
   end
