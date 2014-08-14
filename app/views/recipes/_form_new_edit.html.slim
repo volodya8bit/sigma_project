@@ -2,5 +2,5 @@
    = render 'shared/error_messages', object: f.object
    = f.association :category, label_method: :title, value_method: :id, include_blank: false
    = f.input :title
-   = f.input :text
+   = f.input :text, :as => :ckeditor, :input_html => { :ckeditor => {:toolbar => 'Full'} }
    = f.submit :class => 'btn'

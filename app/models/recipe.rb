@@ -5,7 +5,8 @@ class Recipe < ActiveRecord::Base
 
 
   default_scope -> { order('created_at ASC') }
-  scope :search, ->(query) { where("title ~~* ?", query) }
+  scope :search, ->( query ) { where('title like ? or text like ?', "%#{ query }%", "%#{ query }%") }
+
 
   validates :title, :text, presence: true
   validates :title, length: { minimum: 3, maximum: 40 }

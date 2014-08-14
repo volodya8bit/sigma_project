@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  mount Ckeditor::Engine => '/ckeditor'
+
   devise_for :users
 
   resources :categories do
@@ -6,7 +8,6 @@ Rails.application.routes.draw do
   end
   resources :recipes
   resources :parsers
-
 
 
 
