@@ -9,5 +9,5 @@ class Recipe < ActiveRecord::Base
 
 
   validates :title, :text, presence: true
-  validates :title, length: { minimum: 3, maximum: 40 }
+  validates :title, length: { minimum: 2, maximum: 40 }
 end

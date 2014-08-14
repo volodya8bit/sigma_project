@@ -10,6 +10,6 @@ class Category < ActiveRecord::Base
 
   validates :title, presence: true
   validates :title, uniqueness: true
-  validates :title, length: {minimum: 3, maximum: 40}
+  validates :title, length: {minimum: 2, maximum: 40}
   validates_associated :recipes
 end
