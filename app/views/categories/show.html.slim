@@ -3,8 +3,5 @@ h1 Category
 b= @category.title
 p= @category.recipes.count
 
-- @category.each do |category|
-  = link_to category.title, category_recipes_path(category_id:category.id)
-
 = link_to 'All categories', categories_path
 
